@@ -30,7 +30,13 @@
                     <div>
                         <div id="card-body" class="d-flex justify-content-between align-items-center p-2">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-primary">Details</button>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a asp-area="" asp-controller="Book" asp-action="Detail" asp-route-name="@item.name" type="button" class="btn btn-sm btn-primary">Details</a>
+                                } else
+                                {
+                                    <div class="flex-column align-items-center">Đăng nhập để xem chi tiết sản phẩm</div>
+                                }
                             </div>
                         </div>
                     </div>

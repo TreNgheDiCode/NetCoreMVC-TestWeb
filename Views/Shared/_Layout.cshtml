@@ -29,6 +29,7 @@
                     <ul class="navbar-nav flex-grow-1 justify-content-end">
                         @if (User.Identity.IsAuthenticated)
                         {
+                            <p class="flex-column align-items-center m-0 pe-2">Hello @User.Identity.Name!</p>
                             <li class="nav-item">
                                 <form asp-area="" asp-controller="Account" asp-action="Logout">
                                     <button class="btn btn-outline-danger">Đăng xuất</button>
