@@ -19,9 +19,9 @@ namespace TestWeb.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var books = await context.Books.ToListAsync();
+            var mobiles = await context.Mobiles.ToListAsync();
 
-            return View(books);
+            return View(mobiles);
         }
 
         public IActionResult Privacy()

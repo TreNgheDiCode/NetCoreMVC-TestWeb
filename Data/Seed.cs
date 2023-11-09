@@ -14,14 +14,39 @@ namespace TestWeb.Data
 
                 context.Database.EnsureCreated();
 
-                if (!context.Books.Any()) {
-                    context.Books.AddRange(new Book()
+                if (!context.Companies.Any()) {
+                    context.Companies.AddRange(new List<Company>()
                     {
-                        name = "Lập trình web cơ bản",
-                        image= "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9vayUyMGNvdmVyfGVufDB8fDB8fHww",
-                        description= "Sách dành cho ai học web",
-                        price= 399.000,
-                        quantity = 1
+                        new Company
+                        {
+                            CompanyName = "Apple",
+                            Address = "123 Street",
+                            Mobiles = new List<Mobile>()
+                            {
+                                new Mobile
+                                {
+                                    MobileName = "Iphone15",
+                                    MobileImage = "iphone15.jpg",
+                                    Price = 22000000,
+                                    Description = "Iphone15",
+                                }
+                            }
+                        },
+                        new Company
+                        {
+                            CompanyName = "Samsung",
+                            Address = "456 Street",
+                             Mobiles = new List<Mobile>()
+                            {
+                                new Mobile
+                                {
+                                    MobileName = "Galaxy Flip 5",
+                                    MobileImage = "flip5.jpg",
+                                    Price = 20000000,
+                                    Description = "Samsung Galaxy Flip",
+                                }
+                            }
+                        }
                     });
 
                     context.SaveChanges();
